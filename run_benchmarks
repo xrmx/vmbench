@@ -55,9 +55,33 @@ benchmarks = [{
     'server_address': tcp_address,
     'client': tcp_client,
 }, {
+    'name': 'tcpecho-tornado-asyncio-protocol',
+    'title': 'TCP echo server (tornado asyncio loop)',
+    'server': python + ['/usr/src/servers/torecho_asyncio.py'],
+    'server_address': tcp_address,
+    'client': tcp_client,
+}, {
+    'name': 'tcpecho-tornado-uvloop-protocol',
+    'title': 'TCP echo server (tornado asyncio uvloop)',
+    'server': python + ['/usr/src/servers/torecho_asyncio.py', '--uvloop'],
+    'server_address': tcp_address,
+    'client': tcp_client,
+}, {
     'name': 'readline-tornado',
     'title': 'Streams readline (tornado)',
     'server': python + ['/usr/src/servers/torecho_readline.py'],
+    'server_address': tcp_address,
+    'client': readline_client,
+}, {
+    'name': 'readline-tornado-asyncio',
+    'title': 'Streams readline (tornado asyncio loop)',
+    'server': python + ['/usr/src/servers/torecho_asyncio_readline.py'],
+    'server_address': tcp_address,
+    'client': readline_client,
+}, {
+    'name': 'readline-tornado-uvloop',
+    'title': 'Streams readline (tornado asyncio uvloop)',
+    'server': python + ['/usr/src/servers/torecho_asyncio_readline.py', '--uvloop'],
     'server_address': tcp_address,
     'client': readline_client,
 }, {
